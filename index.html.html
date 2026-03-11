@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chabora Ventures</title>
+
+<!-- SEO & Social -->
+<meta name="description" content="Chabora Ventures - Media, Branding & Digital Growth Consultancy. Book sessions, see our portfolio, and grow your brand.">
+<meta property="og:title" content="Chabora Ventures">
+<meta property="og:description" content="Media, Branding & Digital Growth Consultancy.">
+<meta property="og:image" content="1.jpeg">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;scroll-behavior:smooth;}
+body{background:#f4f6f9;color:#333;line-height:1.6;}
+
+/* HEADER & NAV */
+header{
+position:fixed;width:100%;top:0;background:white;display:flex;justify-content:space-between;align-items:center;padding:18px 8%;box-shadow:0 3px 10px rgba(0,0,0,0.1);z-index:1000;transition:0.3s;
+}
+header h2{color:#0a2540;}
+nav{display:flex;align-items:center;gap:15px;}
+nav a{text-decoration:none;color:#333;font-weight:500;transition:.3s;}
+nav a:hover{color:#ff7a18;}
+.hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;}
+.hamburger div{width:25px;height:3px;background:#333;transition:.3s;}
+
+/* HERO */
+.hero{
+height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;color:white;background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("1.jpeg");background-position:center;background-size:cover;background-repeat:no-repeat;position:relative;animation:fadeIn 2s;
+}
+.hero h1{font-size:55px;margin-bottom:15px;}
+.hero p{font-size:20px;margin-bottom:25px;}
+.hero .rotate-text{color:#ff7a18;font-weight:600;}
+.btn{background:#ff7a18;padding:14px 28px;border-radius:30px;color:white;text-decoration:none;transition:.3s;}
+.btn:hover{background:#ff5500;}
+
+/* SECTIONS */
+section{padding:90px 10%;}
+section h2{text-align:center;margin-bottom:40px;font-size:32px;color:#0a2540;}
+
+/* ABOUT */
+.about{text-align:center;max-width:800px;margin:auto;line-height:1.7;}
+
+/* SERVICES */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.service-card{background:white;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);transition:.4s;transform:translateY(30px);opacity:0;}
+.service-card.show{transform:translateY(0);opacity:1;}
+.service-card:hover{transform:translateY(-8px);}
+.service-card h3{margin-bottom:10px;color:#ff7a18;}
+
+/* PORTFOLIO */
+.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.portfolio img{width:100%;border-radius:10px;transition:.4s;cursor:pointer;}
+.portfolio img:hover{transform:scale(1.05);}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:2000;}
+.lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
+
+/* CONTACT & BOOKING FORMS */
+.contact-form{max-width:600px;margin:auto;display:flex;flex-direction:column;gap:15px;}
+input, textarea{padding:12px;border-radius:6px;border:1px solid #ccc;}
+button{background:#0a2540;color:white;padding:12px;border:none;border-radius:6px;cursor:pointer;transition:.3s;}
+button:hover{background:#163d66;}
+
+/* TESTIMONIALS */
+.testimonial-card{background:white;padding:25px;margin:15px;border-radius:12px;box-shadow:0 6px 15px rgba(0,0,0,0.1);text-align:center;}
+.testimonial-card p{font-style:italic;}
+.testimonial-card strong{display:block;margin-top:10px;color:#ff7a18;}
+
+/* NEWSLETTER */
+.newsletter{max-width:500px;margin:auto;text-align:center;}
+.newsletter input[type=email]{width:70%;margin-right:5px;}
+
+/* FOOTER */
+footer{background:#0a2540;color:white;text-align:center;padding:25px;margin-top:50px;}
+
+/* WHATSAPP BUTTON */
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25D366;color:white;font-size:28px;padding:15px 18px;border-radius:50%;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+
+/* ANIMATIONS */
+@keyframes fadeIn{from{opacity:0; transform:translateY(20px);}to{opacity:1; transform:translateY(0);}}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:38px;}
+nav{display:none;flex-direction:column;position:absolute;top:65px;right:8%;background:white;width:200px;box-shadow:0 3px 10px rgba(0,0,0,0.2);border-radius:8px;overflow:hidden;}
+nav.show{display:flex;}
+.hamburger{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+<h2>Chabora Ventures</h2>
+<nav id="nav">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+<a href="#booking">Booking</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#newsletter">Newsletter</a>
+</nav>
+<div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h1>Chabora Ventures</h1>
+<p><span class="rotate-text">Media</span> • <span class="rotate-text">Branding</span> • <span class="rotate-text">Digital Growth</span></p>
+<a href="#services" class="btn">Our Services</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p class="about">Chabora Ventures is a creative consultancy helping businesses grow through media strategy, digital marketing, branding and content creation. We partner with companies and startups to build strong digital identities and powerful communication strategies.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+<h2>Our Services</h2>
+<div class="services">
+<div class="service-card"><h3>Media Consultancy</h3><p>Strategic media planning and communication advisory for organizations.</p></div>
+<div class="service-card"><h3>Digital Marketing</h3><p>Social media campaigns, online ads and digital growth strategies.</p></div>
+<div class="service-card"><h3>Brand Development</h3><p>Logo design, identity development and brand strategy.</p></div>
+<div class="service-card"><h3>Content Creation</h3><p>Photography, videography and creative digital content.</p></div>
+<div class="service-card"><h3>Business Consultancy</h3><p>Business strategy, startup support and operational guidance.</p></div>
+<div class="service-card"><h3>Training & Workshops</h3><p>Professional media and marketing training programs.</p></div>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2>Our Work</h2>
+<div class="portfolio">
+<img src="1.jpeg" alt="Portfolio Image">
+<img src="2.jpeg" alt="Portfolio Image">
+<img src="9.jpeg" alt="Portfolio Image">
+<img src="4.jpeg" alt="Portfolio Image">
+<img src="5.jpeg" alt="Portfolio Image">
+<img src="6.jpeg" alt="Portfolio Image">
+<img src="7.jpeg" alt="Portfolio Image">
+<img src="8.jpeg" alt="Portfolio Image">
+<img src=".jpeg" alt="Portfolio Image">
+</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox"><img src="" alt="Expanded Image"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p style="text-align:center;margin-bottom:20px;">
+<strong>ROBERT CHASIA</strong><br>
+📞 0790663197 / 0707767921<br>
+✉️ <a href="mailto:robertchasia@gmail.com">robertchasia@gmail.com</a>
+</p>
+<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="_replyto" placeholder="Your Email" required>
+<textarea rows="5" name="message" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h2>Book a Session</h2>
+<p style="text-align:center;margin-bottom:20px;">Fill out the form below to book a session with <strong>ROBERT CHASIA</strong>.</p>
+<form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="_replyto" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Your Phone Number" required>
+<input type="date" name="date" required>
+<input type="time" name="time" required>
+<textarea rows="4" name="message" placeholder="Message / Session Details"></textarea>
+<button type="submit">Book Session</button>
+</form>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+<h2>What Clients Say</h2>
+<div class="services">
+<div class="testimonial-card"><p>"Chabora Ventures helped our brand grow tremendously!"</p><strong>- Jeremiah Ayoma</strong></div>
+<div class="testimonial-card"><p>"Professional and creative team, highly recommended."</p><strong>- Kelvin Luvai</strong></div>
+<div class="testimonial-card"><p>"Their digital marketing strategies increased our sales."</p><strong>- Mfalme productions</strong></div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<div class="newsletter">
+<form action="https://formspree.io/f/your-form-id" method="POST">
+<input type="email" name="_replyto" placeholder="Enter your email" required>
+<button type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Chabora Ventures | All Rights Reserved</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/254790663197" target="_blank">💬</a>
+
+<!-- SCRIPT -->
+<script>
+// Scroll animation for service cards
+const cards = document.querySelectorAll(".service-card");
+window.addEventListener("scroll", () => {
+const trigger = window.innerHeight * 0.85;
+cards.forEach(card => {
+const top = card.getBoundingClientRect().top;
+if(top < trigger){ card.classList.add("show"); }
+});
+});
+
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const nav = document.getElementById('nav');
+hamburger.addEventListener('click', () => { nav.classList.toggle('show'); });
+
+// Rotating hero text
+const texts = ["Media","Branding","Digital Growth"];
+let i=0;
+const rotate = document.querySelectorAll(".rotate-text");
+setInterval(()=>{
+rotate.forEach((el,index)=>{ el.textContent = texts[(i+index)%texts.length]; });
+i++;
+},2000);
+
+// Portfolio lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+document.querySelectorAll('.portfolio img').forEach(img=>{
+img.addEventListener('click',()=>{
+lightbox.style.display='flex';
+lightboxImg.src=img.src;
+});
+});
+lightbox.addEventListener('click',()=>{lightbox.style.display='none';});
+</script>
+
+</body>
+</html>
